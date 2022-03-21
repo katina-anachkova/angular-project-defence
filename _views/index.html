@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--NAVIGATION-->
+    <nav class="navigation nav">
+        <span class="logo">LOGO HERE</span>
+        <ul class="navigation">
+            <li><a class="nav_link" href="/dashboard">Dashboard</a></li>
+            <li><a class="nav_link" href="/create">Add</a></li>
+            <li><a class="nav_link" href="/my-books">My books</a></li>
+            <li><a class="nav_link" href="/login">Login</a></li>
+            <li><a class="nav_link" href="/register">Register</a></li>
+            <li><a class="nav_link" href="javascript:void(0)">Logout</a></li>
+        </ul>
+    </nav>
+    <!--Dashboard-->
+    <main>
+        <section>
+            <h1 class="home__heading">Dashboard</h1>
+
+            <!-- <p>!!!ngif directive of there are or there arent books!!!</p> -->
+
+            <ul class="flex__books__list">
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra4_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra3_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra1_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra3_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra1_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra4_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra3_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra1_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+            </ul>
+            <!-- <p>No books in database!</p> -->
+        </section>
+        <!--DETAILS PAGE-->
+        <section>
+            <div class="flex__books_item details_item">
+                <div class="book_description">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img src="https://richmond.com.mx/wp-content/uploads/2020/08/Abracadabra6_SB.png" /></p>
+                    <!--ngIf is owner-->
+                    <div> <a class="controls_link" href="edit+id">Edit</a>
+                        <a class="controls_link" href="#" onClick={onDelete}>Delete</a><br />
+                    </div>
+                    <!-- {showLikeButton
+                    ? <button onClick={onLike} to="#">Like</button>
+                    : null
+                    }
+                    <div>
+                        <img src=""/>
+                        <span>Likes: {{likes}}</span>
+                    </div> -->
+                </div>
+                <div>
+                    <h3 class="description">Description:</h3>
+                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nisi
+                        sapiente labore saepe est minima unde? Culpa illum rerum dolorem velit laudantium in sequi
+                        alias, facilis vitae reiciendis. Obcaecati sed vero excepturi. Repellat quibusdam, vero eum
+                        similique quis sunt id doloribus quia optio tempora facere, quos excepturi. Eveniet, fuga
+                        nostrum quaerat expedita eum tenetur velit iusto tempora nesciunt hic accusantium ipsum
+                        deserunt, explicabo quis ducimus odit natus voluptatibus voluptatem delectus pariatur
+                        dignissimos ex fugit! Hic eos sit nostrum est repellat ab repudiandae explicabo tenetur numquam,
+                        natus voluptate? Sit ducimus, perspiciatis voluptas quis ipsum facere nostrum, adipisci nulla,
+                        eligendi impedit in.</p>
+                </div>
+            </div>
+        </section>
+        <!--EDIT PAGE-->
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Edit my Book</legend>
+                    <p>
+                        <label for="title">Title</label>
+                        <span>
+                            <input type="text" name="title" value={{book.title}} />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="description">Description</label>
+                        <span>
+                            <textarea name="description">{{book.description}}</textarea>
+                        </span>
+                    </p>
+                    <p>
+                        <label for="image">Image</label>
+                        <span>
+                            <input type="text" name="imageUrl"
+                                value="https://richmond.com.mx/wp-content/uploads/2020/08/Abracadabra6_SB.png" />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="type">Type</label>
+                        <span>
+                            <select name="type" value={{book.type}}>
+                                <option value="Fiction" value>Fiction</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Mistery">Mistery</option>
+                                <option value="Classic">Clasic</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </span>
+                    </p>
+                    <input type="submit" value="Save" />
+                </fieldset>
+            </form>
+        </section>
+        <!--CREATE PAGE-->
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Add new Book</legend>
+                    <p>
+                        <label for="title">Title</label>
+                        <span>
+                            <input type="text" name="title" placeholder="Title" />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="description">Description</label>
+                        <span>
+                            <textarea name="description" placeholder="Description"></textarea>
+                        </span>
+                    </p>
+                    <p>
+                        <label for="image">Image</label>
+                        <span>
+                            <input type="text" name="imageUrl" placeholder="Image" />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="type">Type</label>
+                        <span>
+                            <select name="type">
+                                <option value="Fiction">Fiction</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Mistery">Mistery</option>
+                                <option value="Classic">Clasic</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </span>
+                    </p>
+                    <input type="submit" value="Add Book" />
+                </fieldset>
+            </form>
+        </section>
+        <!--MY BOOKS-->
+        <section>
+            <h1>My Books</h1>
+            <!--ngif books -> render books, ngfor let book of books-->
+            <ul class="flex__my__books">
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra4_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra1_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <li class="flex__books_item">
+                    <h3>Abracadabra</h3>
+                    <p>Type: Fiction</p>
+                    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra4_SB.png" />
+                    </p>
+                    <a class="controls_link" href='details page link with id'>Details</a>
+                </li>
+                <!-- <p>No books in database!</p>} -->
+            </ul>
+        </section>
+        <!--LOGIN-->
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Login Form</legend>
+                    <p>
+                        <label for="email">Email</label>
+                        <span>
+                            <input type="text" name="email" placeholder="Email" />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="password">Password</label>
+                        <span>
+                            <input type="password" name="password" placeholder="Password" />
+                        </span>
+                    </p>
+                    <input type="submit" value="Login" />
+                </fieldset>
+            </form>
+        </section>
+        <!--REGISTER-->
+        <section>
+            <form>
+                <fieldset>
+                    <legend>Register Form</legend>
+                    <p>
+                        <label for="email">Email</label>
+                        <span>
+                            <input type="text" name="email" placeholder="Email" />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="password">Password</label>
+                        <span>
+                            <input type="password" name="password" placeholder="Password" />
+                        </span>
+                    </p>
+                    <p>
+                        <label for="repeat-pass">Repeat Password</label>
+                        <span>
+                            <input type="password" name="confirm-pass" placeholder="Repeat Password" />
+                        </span>
+                    </p>
+                    <input type="submit" value="Register" />
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h3>Created by Katina Anachkova, @kati_an, 2022</h3>
+    </footer>
+</body>
+
+</html>
