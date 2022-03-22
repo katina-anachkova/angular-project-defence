@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EditPageComponent } from './edit-page/edit-page.component';
     NavigationComponent,
     DashboardComponent,
     DetailsPageComponent,
-    EditPageComponent
+    EditPageComponent,
+    CreateBookComponent
   ],
   imports: [
     BrowserModule,
