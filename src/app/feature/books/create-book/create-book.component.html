@@ -1,38 +1,43 @@
-<section>
-    <form>
-        <fieldset>
-            <legend>Add new Book</legend>
-            <p>
-                <label for="title">Title</label>
-                <span>
-                    <input type="text" name="title" placeholder="Title" />
-                </span>
-            </p>
-            <p>
-                <label for="description">Description</label>
-                <span>
-                    <textarea name="description" placeholder="Description"></textarea>
-                </span>
-            </p>
-            <p>
-                <label for="image">Image</label>
-                <span>
-                    <input type="text" name="imageUrl" placeholder="Image" />
-                </span>
-            </p>
-            <p>
-                <label for="type">Type</label>
-                <span>
-                    <select name="type">
-                        <option value="Fiction">Fiction</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Mistery">Mistery</option>
-                        <option value="Classic">Clasic</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </span>
-            </p>
-            <input type="submit" value="Add Book" />
-        </fieldset>
-    </form>
-</section>
+
+
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h3>Add a Book entry</h3>
+            <div class="card">
+                <form class="form-card">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Title<span class="text-danger"> *</span></label> <input
+                                type="text" id="fname" name="fname" placeholder="Enter your first name"
+                                onblur="validate(1)"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Description<span class="text-danger"> *</span></label>
+                            <input type="text" id="email" name="email" placeholder="" onblur="validate(3)">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Image<span class="text-danger"> *</span></label> <input
+                                type="text" id="job" name="job" placeholder="" onblur="validate(5)"> </div>
+                    </div>
+                    <span>
+                        <select name="type">
+                            <option value="Fiction">Fiction</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Mistery">Mistery</option>
+                            <option value="Classic">Clasic</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </span>
+                    <div class="row justify-content-end">
+                        <div class="form-group col-sm-6"> <button type="submit" class=" btn-primary">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
