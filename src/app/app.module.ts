@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { MatSliderModule} from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './feature/pages/dashboard/dashboard.component';
@@ -14,6 +15,7 @@ import { PageNotFoundComponent } from './feature/pages/page-not-found/page-not-f
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { AuthModule } from './auth/auth.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AuthModule } from './auth/auth.module';
     CoreModule.forRoot(),
     AppRoutingModule,
     CoreModule,
-    AuthModule
+    AuthModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent,NavigationComponent, FooterComponent]

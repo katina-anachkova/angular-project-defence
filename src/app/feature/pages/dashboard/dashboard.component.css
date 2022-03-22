@@ -17,21 +17,28 @@ img {
     text-align: center;
 }
 
-.flex__books__list{
-    display:flex;
+.flex__books__list {
+    display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 .flex__books_item {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
     padding: 0px 8px 5px 8px;
+    margin: 20px 30px;
+    border-radius: 4px;
 }
 
-.flex__books_item > h3 + p {
+.flex__books_item>h3+p {
     margin: 0;
+}
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
 }
