@@ -49,15 +49,7 @@ img {
     width: 250px;
 }
 
-.controls_link {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(85, 88, 90);
-    padding: 3px 8px;
-    border-radius: 12px;
-    width: 30%;
-    text-align: center;
-}
+
 
 .flex__books__list{
     display:flex;
