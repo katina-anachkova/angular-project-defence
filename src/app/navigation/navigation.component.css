@@ -1,0 +1,34 @@
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+
+.nav {
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 40px;
+}
+
+li {
+    list-style: none;
+    margin: 10px 30px;
+}
+
+a.nav_link {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(29, 152, 235);
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.logo {
+    font-weight: bold;
+    color:rgb(29, 152, 235);
+    background: white;
+    border-radius: 12px;
+    padding: 8px 13px
+}
