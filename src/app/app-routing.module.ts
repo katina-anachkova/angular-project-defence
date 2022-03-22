@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateBookComponent } from './create-book/create-book.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { EditPageComponent } from './edit-page/edit-page.component';
+import { CreateBookComponent } from './feature/books/create-book/create-book.component';
+import { DashboardComponent } from './feature/pages/dashboard/dashboard.component';
+import { EditPageComponent } from './feature/books/edit-page/edit-page.component';
 
 const routes: Routes = [
   {
