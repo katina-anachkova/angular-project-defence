@@ -16,7 +16,7 @@ export class NavigationComponent {
   
   logoutHandler(): void {
     this.usersService.logout()
-
+     
   }
 
 }
