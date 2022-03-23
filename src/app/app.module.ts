@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
-import { MatSliderModule} from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './feature/pages/dashboard/dashboard.component';
@@ -34,9 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     CoreModule,
     AuthModule,
-    BrowserAnimationsModule,
-    MatSliderModule
-  ],
+    BrowserAnimationsModule
+    ],
   providers: [],
   bootstrap: [AppComponent,NavigationComponent, FooterComponent]
 })

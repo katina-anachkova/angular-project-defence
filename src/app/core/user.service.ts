@@ -13,6 +13,7 @@ export class UsersService {
   login(): void {
     this.isLogged = true;
     this.storage.setItem('isLogged', true);
+    console.log(this.isLogged)
   }
 
   logout(): void {
