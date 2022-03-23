@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
+import { UsersService } from './user.service';
+import { storageServiceProvider } from './storage.service';
+import { BooksServiceService } from './books-service.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,11 @@ export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {
     return {
       ngModule: CoreModule,
-      providers: []
+      providers: [
+        UsersService,
+        storageServiceProvider,
+        BooksServiceService
+      ]
     }
   }
 }

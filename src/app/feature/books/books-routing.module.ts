@@ -1,12 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { CreateBookComponent } from './create-book/create-book.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
 
 
 
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
-export class BooksRoutingModule { }
+const routes: Routes = [
+  {
+      path: 'create',
+      component: CreateBookComponent
+  },
+  {
+      path: 'edit/:id',
+      // canActivate:[AuthGuard],
+      component: EditPageComponent
+  },
+  {
+      path: 'books/:id',
+      component: DetailsPageComponent
+  },
+]
+
+export const BooksRoutingModule = RouterModule.forChild(routes)

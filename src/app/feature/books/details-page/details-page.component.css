@@ -3,6 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 100px;
+    /* background-color: white; */
+
 }
 
 .details_item>div>p.description, .details_item>div>h3.description {
@@ -31,10 +33,19 @@
 }
 
 .flex__books_item {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
     padding: 0px 8px 5px 8px;
+}
+
+.description {
+    padding: 0px 60px;
+    text-align: justify;
+}
+
+h3 {
+    margin: 20px;
 }
