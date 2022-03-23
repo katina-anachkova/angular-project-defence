@@ -4,14 +4,16 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { BooksRoutingModule } from './books-routing.module';
-
-
+import { BookListItemComponent } from './book-list-item/book-list-item.component';
+import { BookListComponent } from '../book-list/book-list.component';
 
 @NgModule({
   declarations: [
     CreateBookComponent,
     DetailsPageComponent,
-    EditPageComponent
+    EditPageComponent,
+    BookListItemComponent,
+    BookListComponent,
   ],
   imports: [
     CommonModule,
