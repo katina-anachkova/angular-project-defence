@@ -40,7 +40,7 @@
                     </div>
                     <div class="text-center fs-6"> Already have an account? <a href="/login">Log in</a> </div>
                     <div class="row justify-content-end">
-                        <div class="form-group col-sm-6"> <button type="submit" class=" btn-primary">Register</button>
+                        <div class="form-group col-sm-6"> <button  [disabled]="registerFormGroup.invalid" type="submit" class=" btn-primary">Register</button>
                         </div>
                     </div>
                 </form>
