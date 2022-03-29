@@ -67,3 +67,11 @@ button:focus {
     box-shadow: none !important;
     outline-width: 0
 }
+
+.error {
+    /* background-color: rgba(214, 98, 98, 0.733) ; */
+    color:red;
+    /* height: 35px; */
+    border-radius: 5px;
+    padding: 3px 15px;
+}

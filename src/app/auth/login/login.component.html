@@ -3,22 +3,33 @@
         <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
             <h3>Login</h3>
             <div class="card">
-                <form class="form-card">
+                <form class="form-card" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Username<span class="text-danger"> *</span></label>
-                            <input type="text" id="username" name="username" placeholder="Add a username"> </div>
+                            <input formControlName="username" type="text" id="username" name="username"
+                                placeholder="Add a username">
+                            <ng-container
+                                *ngIf="loginFormGroup.controls['username'].touched && loginFormGroup.controls['username'].invalid">
+                                <p class="error">Username is required</p>
+                            </ng-container>
+                        </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Password<span class="text-danger"> *</span></label>
-                            <input type="password" id="password" name="password" placeholder="Type your password">
+                            <input formControlName="password" type="password" id="password" name="password"
+                                placeholder="Type your password">
+                            <ng-container *ngIf="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid">
+                                <p *ngIf="loginFormGroup.controls['password'].errors!['required']" class="error">Password is required</p>
+                                <p *ngIf="loginFormGroup.controls['password'].errors!['minlength']" class="error">Password must be at least 6 characters</p>
+                            </ng-container>
                         </div>
                     </div>
                     <div class="text-center fs-6"> Don't have an account yet? <a href="/register">Sign up</a> </div>
 
                     <div class="row justify-content-end">
-                        <div class="form-group col-sm-6"> <button type="submit" class=" btn-primary" (click)="loginHandler()">Login</button>
+                        <div class="form-group col-sm-6"> <button type="submit" class=" btn-primary">Login</button>
                         </div>
                     </div>
                 </form>

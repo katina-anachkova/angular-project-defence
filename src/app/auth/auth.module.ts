@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,11 +12,12 @@ import { AuthRoutingModule } from './auth-routing.module';
   declarations: [
     RegisterComponent,
     LoginComponent,
-    MyBooksComponent
+    MyBooksComponent,
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }
