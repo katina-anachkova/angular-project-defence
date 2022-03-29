@@ -9,31 +9,24 @@ import { UsersService } from 'src/app/core/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-loginFormGroup: FormGroup = this.formBuilder.group({
-  'username': new FormControl('', [Validators.required]),
-  'password': new FormControl('', [Validators.required, Validators.minLength(6)])
-});
+  loginFormGroup: FormGroup = this.formBuilder.group({
+    'username': new FormControl('', [Validators.required]),
+    'password': new FormControl('', [Validators.required, Validators.minLength(6)])
+  });
 
   constructor(
     private formBuilder: FormBuilder,
     private usersService: UsersService,
     private router: Router) { }
 
+
   ngOnInit(): void {
 
   }
 
-  loginHandler(): void {
+  handleLogin(): void {
     //to do
-    // console.log('logged in')
-    // this.usersService.login();
-    // this.router.navigate(['/dashboard'])
-    console.log('form is submitted')
-
+    this.usersService.login();
+    this.router.navigate(['/dashboard'])
   }
-  handleLogin():void {
-    console.log('form must be submitted')
-  }
-
-
 }

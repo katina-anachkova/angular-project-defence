@@ -20,4 +20,8 @@ export class UsersService {
     this.isLogged = false;
     this.storage.setItem('isLogged', false);
   }
+
+  register(): void {
+    console.log('registered')
+  }
 }

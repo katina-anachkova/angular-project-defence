@@ -67,3 +67,9 @@ button:focus {
     box-shadow: none !important;
     outline-width: 0
 }
+
+.error {
+    color:red;
+    border-radius: 5px;
+    padding: 3px 15px;
+}
