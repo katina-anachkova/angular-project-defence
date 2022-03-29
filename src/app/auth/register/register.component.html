@@ -7,40 +7,45 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
-                            <input formControlName="email" type="text" id="username" name="email" placeholder="Email">
+                            <input formControlName="email" type="text" id="email" name="email" placeholder="Email">
                             <ng-container
                                 *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
-                                <p *ngIf="registerFormGroup.controls['email'].errors!['required']" class="error">Email is required!</p>
-                                <p *ngIf="!registerFormGroup.controls['email'].errors!['required'] && registerFormGroup.controls['email'].errors!['email']" class="error">Email is not valid!</p>
+                                <p *ngIf="registerFormGroup.controls['email'].errors!['required']" class="error">Email
+                                    is required!</p>
+                                <p *ngIf="!registerFormGroup.controls['email'].errors!['required'] && registerFormGroup.controls['email'].errors!['email']"
+                                    class="error">Email is not valid!</p>
                             </ng-container>
                         </div>
                     </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Password<span class="text-danger"> *</span></label>
-                            <input formControlName="password" type="password" id="password" name="password"
-                                placeholder="Type your password">
-                            <ng-container
-                                *ngIf="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].invalid">
-                                <p *ngIf="registerFormGroup.controls['password'].errors!['required']" class="error">
-                                    Password is required</p>
-                                <p *ngIf="registerFormGroup.controls['password'].errors!['minlength']" class="error">
-                                    Password must be at least 6 characters</p>
-                            </ng-container>
-                            <!--TODO -> repass-->
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                    class="form-control-label px-3">Password<span class="text-danger"> *</span></label>
+                                <input formControlName="password" type="password" id="password" name="password"
+                                    placeholder="Type your password">
+                                <ng-container
+                                    *ngIf="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].invalid">
+                                    <p *ngIf="registerFormGroup.controls['password'].errors!['required']" class="error">
+                                        Password is required</p>
+                                    <p *ngIf="registerFormGroup.controls['password'].errors!['minLength']" class="error">
+                                        Password must be at least 6 characters</p>
+                                </ng-container>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Repeat password<span class="text-danger">
-                                    *</span></label>
-                            <input formControlName="repass" type="password" id="password" name="password"
-                                placeholder="Confirm your password">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                    class="form-control-label px-3">Repeat password<span class="text-danger">
+                                        *</span></label>
+                                <input formControlName="repass" type="password" id="password" name="password"
+                                    placeholder="Confirm your password">
+                                    <ng-container *ngIf="registerFormGroup.controls['repass'].touched && registerFormGroup.controls['repass'].invalid">
+                                        <p class="error">Passwords must match!</p>
+                                    </ng-container>
+                            </div>
                         </div>
-                    </div>
                     <div class="text-center fs-6"> Already have an account? <a href="/login">Log in</a> </div>
                     <div class="row justify-content-end">
-                        <div class="form-group col-sm-6"> <button  [disabled]="registerFormGroup.invalid" type="submit" class=" btn-primary">Register</button>
+                        <div class="form-group col-sm-6"> <button [disabled]="registerFormGroup.invalid" type="submit"
+                                class=" btn-primary">Register</button>
                         </div>
                     </div>
                 </form>

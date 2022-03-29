@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/core/user.service';
-import { emailValidator } from '../util';
+import { emailValidator, passwordMatch } from '../util';
 
 @Component({
   selector: 'app-register',
@@ -10,18 +10,20 @@ import { emailValidator } from '../util';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]); //to fix min length
+
+  // errorMsg = "";
+
+  // get passwordsGroup(): FormGroup {
+  //   return this.registerFormGroup.controls['passwords'] as FormGroup
+  //   }
+
   registerFormGroup: FormGroup = this.formBuilder.group({
-    email: ['', [Validators.required, emailValidator]],
-    password: [null, [Validators.required, Validators.minLength(6)]],
-    repass: [null, [Validators.required, Validators.minLength(6)]]
-  });
+    'email': new FormControl('', [Validators.required, emailValidator]),
+    'password': this.passwordControl,
+    'repass': new FormControl(null, [passwordMatch(this.passwordControl), Validators.minLength(1)])
 
-  // checkPasswords = (group: AbstractControl):  ValidationErrors | null => { 
-  //   let pass = group.get('password')!.value;
-  //   let confirmPass = group.get('repass')!.value
-  //   return pass === confirmPass ? null : { notSame: true }
-  // }
-
+  })
 
   constructor(private formBuilder: FormBuilder, private usersService: UsersService,
     private router: Router) { }
@@ -29,9 +31,22 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // ngOnInit(): void {
+  //   }
+
   handleRegister(): void {
     //to do
     this.usersService.register();
     this.router.navigate(['/dashboard'])
+
+    const { email, password, repass } = this.registerFormGroup.value;
+
+    const body: any = {
+      email: email,
+      password: password,
+      repass: repass
+    }
+
+///tpdo
   }
 }
