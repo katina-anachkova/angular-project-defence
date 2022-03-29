@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/core/user.service';
+import { emailValidator } from '../util';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +11,9 @@ import { UsersService } from 'src/app/core/user.service';
 })
 export class RegisterComponent implements OnInit {
   registerFormGroup: FormGroup = this.formBuilder.group({
-    'username': new FormControl('', [Validators.required]),
-    'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
-    'repass': new FormControl('', [Validators.required, Validators.minLength(6)])
+    email: ['', [Validators.required, emailValidator]],
+    password: [null, [Validators.required, Validators.minLength(6)]],
+    repass: [null, [Validators.required, Validators.minLength(6)]]
   });
 
   // checkPasswords = (group: AbstractControl):  ValidationErrors | null => { 

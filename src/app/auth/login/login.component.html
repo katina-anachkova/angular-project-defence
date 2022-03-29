@@ -6,12 +6,13 @@
                 <form class="form-card" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                class="form-control-label px-3">Username<span class="text-danger"> *</span></label>
-                            <input formControlName="username" type="text" id="username" name="username"
-                                placeholder="Add a username">
+                                class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
+                            <input formControlName="email" type="text" id="email" name="email"
+                                placeholder="Add a email">
                             <ng-container
-                                *ngIf="loginFormGroup.controls['username'].touched && loginFormGroup.controls['username'].invalid">
-                                <p class="error">Username is required</p>
+                                *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
+                                <p *ngIf="loginFormGroup.controls['email'].errors!['required']" class="error">Email is required!</p>
+                                <p *ngIf="!loginFormGroup.controls['email'].errors!['required'] && loginFormGroup.controls['email'].errors!['email']" class="error">Email is not valid!</p>
                             </ng-container>
                         </div>
                     </div>
