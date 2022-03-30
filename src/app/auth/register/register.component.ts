@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/core/user.service';
+import { CreateUser, UsersService } from 'src/app/core/user.service';
 import { emailValidator, passwordMatch } from '../util';
 
 @Component({
@@ -36,17 +36,19 @@ export class RegisterComponent implements OnInit {
 
   handleRegister(): void {
     //to do
-    this.usersService.register();
-    this.router.navigate(['/dashboard'])
 
     const { email, password, repass } = this.registerFormGroup.value;
 
-    const body: any = {
+    const body: CreateUser = {
       email: email,
-      password: password,
-      repass: repass
+      password: password
     }
 
-///tpdo
+    this.usersService.register$(body).subscribe(() => {
+      this.router.navigate(['/dashboard'])
+    });
+
+    
   }
 }
+  

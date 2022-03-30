@@ -6,6 +6,7 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 import { BooksRoutingModule } from './books-routing.module';
 import { BookListItemComponent } from './book-list-item/book-list-item.component';
 import { BookListComponent } from '../book-list/book-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BookListComponent } from '../book-list/book-list.component';
   ],
   imports: [
     CommonModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    FormsModule
   ]
 })
 export class BooksModule { }

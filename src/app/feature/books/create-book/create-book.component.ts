@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-book',
@@ -12,4 +13,7 @@ export class CreateBookComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitNewBook(newBookForm: NgForm): void {
+    
+  }
 }
