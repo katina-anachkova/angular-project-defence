@@ -8,7 +8,7 @@
     margin: 20px 30px;
     border-radius: 4px;
     background-color: white;
-    width: 350px;
+    width: 360px;
     height: 580px;
 }
 
@@ -17,10 +17,10 @@
 }
 
 img {
-    width: 280px;
+    width: 300px;
     margin: 0;
     padding: 0;
-    height: 300px;
+    height: 320px;
 }
 
 .flex__books_item>h3 {
