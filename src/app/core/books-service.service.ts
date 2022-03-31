@@ -9,7 +9,7 @@ export class BooksServiceService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<IBook[]> {
-    return this.http.get<IBook[]>('https://localhost:3030/data/books');
+    return this.http.get<IBook[]>('http://localhost:3030/data/books');
   }
 
   getBookById(id:any): Observable<IBook> {

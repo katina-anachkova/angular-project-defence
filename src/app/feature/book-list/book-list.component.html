@@ -1,7 +1,7 @@
-<div *ngIf="bookList">
+<ul *ngIf="bookList" class="flex__books__list">
   <app-book-list-item *ngFor="let book of bookList" [book]="book"></app-book-list-item>
   <div *ngIf="bookList.length === 0">No Books!</div>
-</div>
+</ul>
 <div *ngIf="!bookList">
   Loading...
 </div>
