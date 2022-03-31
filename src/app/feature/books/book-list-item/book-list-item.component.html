@@ -1,7 +1,8 @@
 <li class="flex__books_item">
-    <h3>Abracadabra - book.title</h3>
-    <p>Type: Fiction - book.type</p>
-    <p><img alt="" src="https://www.richmondelt.com/wp-content/uploads/2020/08/Abracadabra4_SB.png" />
+    <h3>{{book.title}}</h3>
+    <h4>{{book.author}}</h4>
+    <h5>Added by: {{book.userId}}</h5>
+    <p><img alt="" src={{book.imageUrl}} />
     </p>
-    <a class="btn btn-outline-primary btn-sm" href="/details/:id" data-abc="true">Details</a>
+    <a class="btn btn-outline-primary btn-sm" href="/books/:id" data-abc="true">Details</a>
 </li>

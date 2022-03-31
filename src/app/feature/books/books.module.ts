@@ -20,6 +20,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     BooksRoutingModule,
     FormsModule
+  ],
+  exports: [
+    BookListComponent
   ]
 })
 export class BooksModule { }

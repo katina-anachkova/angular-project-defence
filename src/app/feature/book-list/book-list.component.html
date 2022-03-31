@@ -1,7 +1,7 @@
 <div *ngIf="bookList">
-    <app-book-list-item *ngFor="let book of bookList" [book]="book"></app-book-list-item>
-    <div *ngIf="bookList.length === 0">No Books!</div>
-  </div>
-  <div *ngIf="!bookList">
-    Loading...
-  </div>
+  <app-book-list-item *ngFor="let book of bookList" [book]="book"></app-book-list-item>
+  <div *ngIf="bookList.length === 0">No Books!</div>
+</div>
+<div *ngIf="!bookList">
+  Loading...
+</div>

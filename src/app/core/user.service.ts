@@ -19,9 +19,9 @@ export class UsersService {
   constructor(private storage: StorageService, private httpClient: HttpClient) {
   }
 
-  login$(userData: {email:string, password: string}): Observable<IUser> { 
+  login$(userData: {email:string, password: string}): Observable<any> { 
     return this.httpClient
-    .post<IUser>(`${environment.apiUrl}/login`, userData, {withCredentials:true, observe: 'response'})
+    .post<any>(`${environment.apiUrl}/login`, userData, {withCredentials:true, observe: 'response'})
     .pipe(
       tap(response => console.log(response)),
       map(response => response.body),

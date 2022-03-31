@@ -17,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookListComponent } from './feature/book-list/book-list.component';
 import { BooksModule } from './feature/books/books.module';
+import { BooksServiceService } from './core/books-service.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { BooksModule } from './feature/books/books.module';
     AuthModule,
     BooksModule
   ],
-  providers: [],
+  providers: [BooksServiceService],
   bootstrap: [AppComponent, NavigationComponent, FooterComponent]
 })
 export class AppModule { }
