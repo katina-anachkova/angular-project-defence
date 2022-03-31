@@ -12,7 +12,7 @@ const routes: Routes = [
       component: CreateBookComponent
   },
   {
-      path: 'edit/:id',
+      path: 'books/edit/:id',
       canActivate:[AuthGuard],
       component: EditPageComponent
   },

@@ -38,18 +38,7 @@
                             </ng-container>
                         </div>
                     </div>
-                    <span>
-                        <select ngModel #bookType="ngModel" required name="type">
-                            <option value="Fiction">Fiction</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Mistery">Mistery</option>
-                            <option value="Classic">Classic</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <ng-container *ngIf="bookType.touched && bookImage.invalid">
-                            <p *ngIf="bookType.errors!['required']" class="error">Image is required</p>
-                        </ng-container>
-                    </span>
+                   
                     <div class="row justify-content-end">
                         <div class="form-group col-sm-6"> <button [disabled]="newBookForm.invalid" type="submit"
                                 class=" btn-primary">Create</button>

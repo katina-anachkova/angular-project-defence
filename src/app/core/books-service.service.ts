@@ -13,14 +13,18 @@ export class BooksServiceService {
   }
 
   getBookById(id:any): Observable<IBook> {
-    return this.http.get<IBook>(`....${id}`);
+    return this.http.get<IBook>(`http://localhost:3030/data/books/${id}`);
   }
 
-  getMyBooks(id:any): Observable<IBook[]> {
-    return this.http.get<IBook[]>(`.... ${id}`);
+  // getMyBooks(ownerId:any): Observable<IBook[]> {
+  //   return this.http.get<IBook[]>(`http://localhost:3030/data/books/${ownerId}`);
+  // }
+
+  addBook(body: {title: string, author: string, description: string, imgUrl: string}): Observable<IBook> {
+    return this.http.post<IBook>(`http://localhost:3030/data/books`, body, {withCredentials: true});
   }
 
-  addBook(body: {title: string, author: string, description: string, imageUrl: string}): Observable<IBook> {
-    return this.http.post<IBook>(`apiurl/books`, body, {withCredentials: true});
+  deleteBook(id:any): any {
+    return this.http.delete(`http://localhost:3030/data/books/${id}`)
   }
 }

@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [
-    BookListComponent
+    BookListComponent,
+    DetailsPageComponent
   ]
 })
 export class BooksModule { }
