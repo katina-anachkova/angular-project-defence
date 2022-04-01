@@ -27,7 +27,12 @@ export class DetailsPageComponent implements OnInit {
   }
 
   onDelete($event: any, bookId: string) {
-    console.log(bookId)
     $event.preventDefault();
-    this.bookService.deleteBook(bookId).subscribe((response:any) => { console.log(response); }) }
+    this.bookService.deleteBook(bookId).subscribe((response: any) => { console.log(response); })
+    this.navigateToHome()
+  }
+
+  navigateToHome() {
+    this.router.navigate(['/dashboard']);
+  }
 }
