@@ -3,18 +3,9 @@
         <div class="book_description">
             <h3>{{book.title}}</h3>
             <p><img class="details_img" src={{book.imageUrl}} /></p>
-            <!--ngIf is owner-->
             <div> <a class="controls_link" href="edit+id">Edit</a>
-                <a class="controls_link" href="/dashboard" (click)="onDelete(book._id)">Delete</a><br />
+                <button type="submit" class="controls_link" href="/dashboard" (click)="onDelete($event, book._id)">Delete</button><br />
             </div>
-            <!-- {showLikeButton
-            ? <button onClick={onLike} to="#">Like</button>
-            : null
-            }
-            <div>
-                <img src=""/>
-                <span>Likes: {{likes}}</span>
-            </div> -->
         </div>
         <div>
             <h3 class="description">Description:</h3>

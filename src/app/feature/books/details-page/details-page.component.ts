@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BooksServiceService } from 'src/app/core/books-service.service';
 import { IBook } from 'src/app/core/interfaces/books';
 import { UsersService } from 'src/app/core/user.service';
-import { ActivatedRoute } from '@angular/router';
-import { BooksRoutingModule } from '../books-routing.module';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-details-page',
@@ -11,12 +10,12 @@ import { BooksRoutingModule } from '../books-routing.module';
   styleUrls: ['./details-page.component.css']
 })
 export class DetailsPageComponent implements OnInit {
-  
+
   isLoggedIn: boolean = this.usersServise.isLogged;
 
- book!: IBook;
+  book!: IBook;
 
-  constructor(private activatedRoute: ActivatedRoute, private usersServise: UsersService, private bookService:BooksServiceService) { }
+  constructor(private activatedRoute: ActivatedRoute, private usersServise: UsersService, private bookService: BooksServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -26,11 +25,9 @@ export class DetailsPageComponent implements OnInit {
       })
     })
   }
-  
-  onDelete (bookId: string) {
 
-      this.bookService.deleteBook(bookId)
-
-  }
-
+  onDelete($event: any, bookId: string) {
+    console.log(bookId)
+    $event.preventDefault();
+    this.bookService.deleteBook(bookId).subscribe((response:any) => { console.log(response); }) }
 }
