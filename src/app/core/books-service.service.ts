@@ -20,8 +20,8 @@ export class BooksServiceService {
   //   return this.http.get<IBook[]>(`http://localhost:3030/data/books/${ownerId}`);
   // }
 
-  addBook(body: {title: string, author: string, description: string, imgUrl: string}): Observable<IBook> {
-    return this.http.post<IBook>(`http://localhost:3030/data/books`, body, {withCredentials: true});
+  addBook(body: {title: string, author: string, description: string, imageUrl: string}): Observable<IBook> {
+    return this.http.post<IBook>(`http://localhost:3030/data/books`, body, {withCredentials: false});
   }
 
   deleteBook(id:any): any {
