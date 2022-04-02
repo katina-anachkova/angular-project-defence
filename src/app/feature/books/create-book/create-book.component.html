@@ -33,8 +33,8 @@
                                 class="form-control-label px-3">Image<span class="text-danger"> *</span></label>
                             <input ngModel #bookImage="ngModel" required type="text" id="job" name="job"
                                 placeholder="Image URL">
-                            <ng-container *ngIf="bookImage.touched && bookImage.invalid">Image
-                                <p *ngIf="bookImage.errors!['required']" class="error">Description is required</p>
+                            <ng-container *ngIf="bookImage.touched && bookImage.invalid">
+                                <p *ngIf="bookImage.errors!['required']" class="error">Image is required</p>
                             </ng-container>
                         </div>
                     </div>
