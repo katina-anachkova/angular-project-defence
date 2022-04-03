@@ -47,5 +47,12 @@ a.nav_link.dash {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.flex_nav{
+    display:flex;
+    flex-direction: row;
+}
 
-
+.user, .guest, .all {
+    display:flex;
+    flex-direction: row;
+}

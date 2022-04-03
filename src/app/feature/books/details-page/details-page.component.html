@@ -9,7 +9,7 @@
             <h6>{{book.author}}</h6>
             <p class="description">{{book.description}}</p>
             <div>
-                <button type="submit" class="controls_link" href="edit+id">Edit</button>
+                <button type="submit" class="controls_link" (click)="onEdit(book._id)">Edit</button>
                 <button type="submit" class="controls_link" (click)="onDelete($event, book._id)">Delete</button><br />
             </div>
         </div>

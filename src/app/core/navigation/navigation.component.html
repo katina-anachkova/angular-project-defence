@@ -1,11 +1,19 @@
 <nav class="topnav navigation nav">
     <a href="/dashboard" class="logo nav_link">Happy elephant</a>
     <ul class="navigation">
-        <li><a class="nav_link dash" href="/dashboard">Dashboard</a></li>
-        <li><a class="nav_link dash" href="/create">Add</a></li>
-        <li><a class="nav_link dash" href="/my-books">My books</a></li>
-        <li><a class="nav_link" href="/login">Login</a></li>
-        <li><a class="nav_link" href="/register">Register</a></li>
-        <li><a class="nav_link" routerLink="/dashboard">Logout</a></li>
+        <div class="flex_nav">
+        <div class="all">
+            <li><a class="nav_link dash" href="/dashboard">Dashboard</a></li>
+        </div>
+        <div *ngIf="isLoggedIn$" class="user">
+            <li><a class="nav_link dash" href="/create">Add</a></li>
+            <li><a class="nav_link dash" href="/users/:ownerId">My books</a></li>
+            <li><a class="nav_link" (click)="logoutHandler()" href="javascript:void(0)">Logout</a></li>
+        </div>
+        <div *ngIf="!isLoggedIn$" class="guest">
+            <li><a class="nav_link" href="/login">Login</a></li>
+            <li><a class="nav_link" href="/register">Register</a></li>
+        </div>
+    </div>
     </ul>
 </nav>

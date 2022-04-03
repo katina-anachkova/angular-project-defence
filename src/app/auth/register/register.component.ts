@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateUser, UsersService } from 'src/app/core/user.service';
+// import { CreateUserDto } from 'src/app/core/user.service';
 import { emailValidator, passwordMatch } from '../util';
+import { RegistersService } from './register.service';
 
 @Component({
   selector: 'app-register',
@@ -10,45 +11,34 @@ import { emailValidator, passwordMatch } from '../util';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(6)]); //to fix min length
-
-  // errorMsg = "";
-
-  // get passwordsGroup(): FormGroup {
-  //   return this.registerFormGroup.controls['passwords'] as FormGroup
-  //   }
+  erorrMsg = '';
+  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(5)]);
 
   registerFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('', [Validators.required, emailValidator]),
+    "username": new FormControl(null, [Validators.required, Validators.minLength(3)]),
     'password': this.passwordControl,
     'repass': new FormControl(null, [passwordMatch(this.passwordControl), Validators.minLength(1)])
 
   })
 
-  constructor(private formBuilder: FormBuilder, private usersService: UsersService,
-    private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private service: RegistersService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // ngOnInit(): void {
-  //   }
-
   handleRegister(): void {
-    //to do
+    const { email, password, username, repass} = this.registerFormGroup.value;
 
-    const { email, password, repass } = this.registerFormGroup.value;
-
-    const body: CreateUser = {
+    const body: any = {
       email: email,
-      password: password
+      password: password,
+      username: username,
+      repass: repass
     }
 
-    this.usersService.register$(body).subscribe(() => {
-      this.router.navigate(['/dashboard'])
-    });
-
-    
+    this.service.register(body).subscribe(() => {
+      this.router.navigate(['/dashboard']);
+    })
   }
 }
-  

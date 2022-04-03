@@ -1,39 +1,61 @@
-<section>
-    <form>
-        <fieldset>
-            <legend>Edit my Book</legend>
-            <p>
-                <label for="title">Title</label>
-                <span>
-                    <input type="text" name="title" value="" />
-                </span>
-            </p>
-            <p>
-                <label for="description">Description</label>
-                <span>
-                    <textarea name="description">"some desc"</textarea>
-                </span>
-            </p>
-            <p>
-                <label for="image">Image</label>
-                <span>
-                    <input type="text" name="imageUrl"
-                        value="https://richmond.com.mx/wp-content/uploads/2020/08/Abracadabra6_SB.png" />
-                </span>
-            </p>
-            <p>
-                <label for="type">Type</label>
-                <span>
-                    <select name="type" value="some type in curly brackets">
-                        <option value="Fiction" value>Fiction</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Mistery">Mistery</option>
-                        <option value="Classic">Clasic</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </span>
-            </p>
-            <input type="submit" value="Save" />
-        </fieldset>
-    </form>
-</section>
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h3>Edit Book</h3>
+            <div class="card">
+                <form class="form-card" #editBookForm="ngForm" (ngSubmit)="saveBook(editBookForm)">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Title<span class="text-danger"> * </span></label>
+                            <input #bookTitle="ngModel" ngModel type="text" id="title" name="title" required
+                                minlength="5" placeholder="Book title">
+                            <ng-container *ngIf="bookTitle.touched && bookTitle.invalid">
+                                <p *ngIf="bookAuthor.errors!['required']" class="error">Author is required</p>
+                                <p *ngIf="bookAuthor.errors!['minlength']" class="error">Author must be at least 5
+                                    characters long</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Author<span class="text-danger"> * </span></label>
+                            <input #bookAuthor="ngModel" ngModel type="text" id="author" name="author" required
+                                minlength="5">
+                            <ng-container *ngIf="bookAuthor.touched && bookAuthor.invalid">
+                                <p *ngIf="bookAuthor.errors!['required']" class="error">Author is required</p>
+                                <p *ngIf="bookAuthor.errors!['minlength']" class="error">Author must be at least 5
+                                    characters long</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Description<span class="text-danger"> *</span></label>
+                            <input ngModel #bookDescription="ngModel" required minlength="20" type="text"
+                                id="description" name="description">
+                            <ng-container *ngIf="bookDescription.touched && bookDescription.invalid">
+                                <p *ngIf="bookDescription.errors!['required']" class="error">Description is required</p>
+                                <p *ngIf="bookDescription.errors!['minlength']" class="error">Description must be at
+                                    least 20
+                                    characters long</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Image<span class="text-danger"> *</span></label>
+                            <input ngModel #bookImage="ngModel" required type="text" id="imgUrl" name="imgUrl">
+                            <ng-container *ngIf="bookImage.touched && bookImage.invalid">
+                                <p *ngIf="bookImage.errors!['required']" class="error">Image is required</p>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group col-sm-6"> <button type="submit" class=" btn-primary">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

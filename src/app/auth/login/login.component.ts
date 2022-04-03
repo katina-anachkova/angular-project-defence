@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/core/user.service';
+import { RegistersService } from '../register/register.service';
 import { emailValidator } from '../util';
 
 @Component({
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private usersService: UsersService,
+    private service: RegistersService,
     private router: Router) { }
 
 
@@ -28,18 +28,28 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin(): void {
+    const { email, password, ...rest } = this.loginFormGroup.value;
+
+    const body: { [key: string]: string } = {
+      email: email,
+      password: password,
+    }
+
+    let params = `?email=${body['email']}&password=${body['password']}`
+
     this.errorMsg = '';
-    this.usersService.login$(this.loginFormGroup.value).subscribe({
-      next: (user: any) => {
-        console.log(user)
-        this.router.navigate(['/dashboard'])
+
+    this.service.login(params).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard']);
       },
       complete: () => {
-        console.log('login stream completed')
+        sessionStorage.setItem('user', body['email'].toString())
       },
       error: (err: { error: { message: string; }; }) => {
         this.errorMsg = err.error.message;
       }
     });
+    console.log(body);
   }
 }

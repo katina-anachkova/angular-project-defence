@@ -3,4 +3,5 @@ export interface IUser {
     books: string[];
     email: string;
     password: string;
+    id: string
 }

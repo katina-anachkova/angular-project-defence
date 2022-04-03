@@ -2,7 +2,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { MyBooksComponent } from './my-books/my-books.component';
+import { MybooksComponent } from '../feature/books/mybooks/mybooks.component'; 
 import { AuthGuard } from '../core/guards/auth.guard';
 
 
@@ -17,8 +17,8 @@ const routes: Routes = [
   },
   {
       path: 'my-books',
-      canActivate: [AuthGuard],
-      component: MyBooksComponent
+    //   canActivate: [AuthGuard],
+      component: MybooksComponent
   }
 ]
 export const AuthRoutingModule = RouterModule.forChild(routes)

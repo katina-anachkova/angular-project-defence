@@ -32,7 +32,13 @@ export class DetailsPageComponent implements OnInit {
     this.navigateToHome()
   }
 
+  onEdit(bookId: string) {
+    this.router.navigate([`/edit/${bookId}`])
+  }
+
   navigateToHome() {
     this.router.navigate(['/dashboard']);
   }
 }
+
+

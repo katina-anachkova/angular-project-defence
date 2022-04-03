@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { UsersService } from '../user.service'; 
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { RegistersService } from 'src/app/auth/register/register.service';
+import { IUser } from '../interfaces/user';
 
 @Component({
   selector: 'app-navigation',
@@ -7,15 +10,17 @@ import { UsersService } from '../user.service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  get isLogged(): boolean {
-    return this.usersService.isLogged
-  }
 
-  constructor(public usersService: UsersService) { }
+  currentUser$:Observable<IUser> = this.service.currentUser$;
+  // isLoggedIn$: Observable<boolean> = this.service.isLoggedIn$;
+  isLoggedIn$: boolean = (sessionStorage.length > 0) ? true : false;
+
+  constructor(public service: RegistersService, private router: Router) { }
 
   
   logoutHandler(): void {
-    this.usersService.logout()  
+    this.service.logout();
+    this.router.navigate(['/login']);
   }
 
 }

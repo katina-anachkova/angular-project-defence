@@ -9,13 +9,13 @@ import { BooksServiceService } from 'src/app/core/books-service.service';
 })
 export class BookListComponent implements OnInit {
 
-  bookList!: IBook[];
+  bookList!: any;
 
   constructor(private bookServise: BooksServiceService) { }
 
   ngOnInit(): void {
     this.bookServise.getBooks().subscribe(books => {
-      this.bookList = books;
+      this.bookList = Object.values(books)[0]
     });
   }
 

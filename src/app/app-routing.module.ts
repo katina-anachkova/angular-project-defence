@@ -3,6 +3,7 @@ import { CreateBookComponent } from './feature/books/create-book/create-book.com
 import { DashboardComponent } from './feature/pages/dashboard/dashboard.component';
 import { EditPageComponent } from './feature/books/edit-page/edit-page.component';
 import { DetailsPageComponent } from './feature/books/details-page/details-page.component';
+import { MybooksComponent } from './feature/books/mybooks/mybooks.component'; 
 
 const routes: Routes = [
   {
@@ -25,7 +26,11 @@ const routes: Routes = [
 {
   path: 'details/:id',
   component: DetailsPageComponent
-}
+},
+// {
+//   path: 'users/:ownerId',
+//   component: MybooksComponent
+// }
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

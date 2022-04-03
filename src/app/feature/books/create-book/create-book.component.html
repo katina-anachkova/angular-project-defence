@@ -43,7 +43,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Image<span class="text-danger"> *</span></label>
-                            <input ngModel #bookImage="ngModel" required type="text" id="imgUrl" name="imgUrl"
+                            <input ngModel #bookImage="ngModel" required type="text" id="imageUrl" name="imageUrl"
                                 placeholder="Image URL">
                             <ng-container *ngIf="bookImage.touched && bookImage.invalid">
                                 <p *ngIf="bookImage.errors!['required']" class="error">Image is required</p>
