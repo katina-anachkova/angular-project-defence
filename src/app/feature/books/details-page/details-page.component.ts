@@ -22,18 +22,18 @@ export class DetailsPageComponent implements OnInit {
       const bookId = params['id'];
       this.bookService.getBookById(bookId).subscribe(book => {
         this.book = book;
+        console.log(book);
       })
     })
   }
 
-  onDelete($event: any, bookId: string) {
-    $event.preventDefault();
+  onDelete(bookId: string) {
     this.bookService.deleteBook(bookId).subscribe((response: any) => { console.log(response); })
     this.navigateToHome()
   }
 
   onEdit(bookId: string) {
-    this.router.navigate([`/edit/${bookId}`])
+    this.router.navigate([`/${bookId}/edit`])
   }
 
   navigateToHome() {

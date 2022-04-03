@@ -5,12 +5,12 @@
         <div class="all">
             <li><a class="nav_link dash" href="/dashboard">Dashboard</a></li>
         </div>
-        <div *ngIf="isLoggedIn$" class="user">
+        <div *ngIf="sessionStorage.length > 0" class="user">
             <li><a class="nav_link dash" href="/create">Add</a></li>
             <li><a class="nav_link dash" href="/users/:ownerId">My books</a></li>
             <li><a class="nav_link" (click)="logoutHandler()" href="javascript:void(0)">Logout</a></li>
         </div>
-        <div *ngIf="!isLoggedIn$" class="guest">
+        <div *ngIf="sessionStorage.length == 0" class="guest">
             <li><a class="nav_link" href="/login">Login</a></li>
             <li><a class="nav_link" href="/register">Register</a></li>
         </div>

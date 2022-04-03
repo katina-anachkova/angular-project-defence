@@ -12,12 +12,12 @@ const routes: Routes = [
       component: CreateBookComponent
   },
   {
-      path: 'classes/Books/edit/:id',
+      path: ':id/edit',
     //   canActivate:[AuthGuard],
       component: EditPageComponent
   },
   {
-      path: 'classes/Books/:id',
+      path: 'dashboard/books/:id',
       component: DetailsPageComponent
   },
 ]

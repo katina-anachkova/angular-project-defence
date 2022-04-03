@@ -5,6 +5,6 @@ export interface IBook {
     author: string,
     description: string,
     imageUrl: string,
-    _id: string,
+    objectId: string,
     ownerId: IUser
   }

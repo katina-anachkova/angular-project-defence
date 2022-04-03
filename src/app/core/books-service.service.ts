@@ -25,7 +25,7 @@ export class BooksServiceService {
   }
 
   getBookById(id: any): Observable<IBook> {
-    return this.http.get<IBook>(url + id, requestOptions);
+    return this.http.get<IBook>(url + `/${id}`, requestOptions);
   }
 
   // getMyBooks(ownerId: string): Observable<IBook[]> {
@@ -37,10 +37,10 @@ export class BooksServiceService {
   }
 
   deleteBook(id: any): any {
-    return this.http.delete(url + `${id}`)
+    return this.http.delete(url + `/${id}`, requestOptions)
   }
 
   updateBook(id: any, body: any): any {
-    return this.http.put(url + `${id}`, body)
+    return this.http.put(url + `/${id}`, body, requestOptions)
   }
 }

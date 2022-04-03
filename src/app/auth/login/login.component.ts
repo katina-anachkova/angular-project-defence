@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin(): void {
+    this.errorMsg = '';
+
     const { email, password, ...rest } = this.loginFormGroup.value;
 
     const body: { [key: string]: string } = {
@@ -36,8 +38,6 @@ export class LoginComponent implements OnInit {
     }
 
     let params = `?email=${body['email']}&password=${body['password']}`
-
-    this.errorMsg = '';
 
     this.service.login(params).subscribe({
       next: () => {

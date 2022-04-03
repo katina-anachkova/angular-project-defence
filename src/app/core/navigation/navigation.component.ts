@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth.service';
 import { RegistersService } from 'src/app/auth/register/register.service';
 import { IUser } from '../interfaces/user';
+import { MessageBusService, MessageType } from '../message-bus.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,16 +13,41 @@ import { IUser } from '../interfaces/user';
 })
 export class NavigationComponent {
 
-  currentUser$:Observable<IUser> = this.service.currentUser$;
-  // isLoggedIn$: Observable<boolean> = this.service.isLoggedIn$;
-  isLoggedIn$: boolean = (sessionStorage.length > 0) ? true : false;
+  sessionStorage = sessionStorage;
+  message!: string;
+  isMessageError!: boolean;
 
-  constructor(public service: RegistersService, private router: Router) { }
+  private isLoggingOut: boolean = false;
 
-  
-  logoutHandler(): void {
-    this.service.logout();
-    this.router.navigate(['/login']);
+  private subscription!: Subscription;
+
+  constructor(public authService: AuthService, private router: Router, private messageBus: MessageBusService) {
   }
 
+  ngOnDestroy(): void {
+    // this.subscription.unsubscribe();
+  }
+
+  logoutHandler(): void {
+    if (this.isLoggingOut) {
+      return;
+    }
+
+    this.isLoggingOut = true;
+    console.log('logout called');
+
+    this.authService.logout$().subscribe({
+      next: args => {
+        console.log(args);
+      },
+      complete: () => {
+        this.isLoggingOut = false;
+        sessionStorage.clear();
+        this.router.navigate(['/dashboard']);
+      },
+      error: () => {
+        this.isLoggingOut = false;
+      }
+    });
+  }
 }

@@ -26,7 +26,7 @@ export class EditPageComponent implements OnInit {
   }
 
   saveBook(submitBookForm: NgForm): void{
-    const id = this.book._id;
+    const id = this.book.objectId;
     const body = submitBookForm.value;
     this.bookService.updateBook(id, body).subscribe({
       next: (book: any) => {
