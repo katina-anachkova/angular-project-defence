@@ -7,23 +7,20 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './feature/pages/dashboard/dashboard.component';
-import { DetailsPageComponent } from './feature/books/details-page/details-page.component';
-import { EditPageComponent } from './feature/books/edit-page/edit-page.component';
-import { CreateBookComponent } from './feature/books/create-book/create-book.component';
 import { PageNotFoundComponent } from './feature/pages/page-not-found/page-not-found.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { AuthModule } from './auth/auth.module';
-import { BookListComponent } from './feature/book-list/book-list.component';
 import { BooksModule } from './feature/books/books.module';
 import { BooksServiceService } from './core/books-service.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    ],
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -32,7 +29,8 @@ import { BooksServiceService } from './core/books-service.service';
     AppRoutingModule,
     CoreModule,
     AuthModule,
-    BooksModule
+    BooksModule,
+    BrowserAnimationsModule,
   ],
   providers: [BooksServiceService],
   bootstrap: [AppComponent, NavigationComponent, FooterComponent]

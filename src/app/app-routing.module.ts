@@ -25,8 +25,7 @@ const routes: Routes = [
 {
   path: 'details/:id',
   component: DetailsPageComponent
-},
-
+}
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);
