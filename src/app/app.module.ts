@@ -14,7 +14,6 @@ import { PageNotFoundComponent } from './feature/pages/page-not-found/page-not-f
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { AuthModule } from './auth/auth.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookListComponent } from './feature/book-list/book-list.component';
 import { BooksModule } from './feature/books/books.module';
 import { BooksServiceService } from './core/books-service.service';

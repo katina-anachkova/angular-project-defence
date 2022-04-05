@@ -1,8 +1,8 @@
 <li class="flex__books_item">
-    <h3>{{book.title}}</h3>
-    <h4>{{book.author}}</h4>
+    <h4>{{book.title}}</h4>
+    <h5>{{book.author}}</h5>
     <!-- <h5>Added by: {{book.userId}}</h5> -->
     <p><img alt="" src={{book.imageUrl}} />
     </p>
-    <a class="btn btn-outline-primary btn-sm" routerLink="books/{{book.objectId}}">Details</a>
+    <a class="btn btn-outline-primary btn-sm" href="books/{{book.objectId}}">Details</a>
 </li>

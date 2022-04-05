@@ -17,7 +17,7 @@ const routes: Routes = [
       component: EditPageComponent
   },
   {
-      path: 'dashboard/books/:id',
+      path: 'books/:id',
       component: DetailsPageComponent
   },
 ]

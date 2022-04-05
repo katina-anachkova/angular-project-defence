@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IBook } from 'src/app/core/interfaces/books';
 import { BooksServiceService } from 'src/app/core/books-service.service';
 
 @Component({

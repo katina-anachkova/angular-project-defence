@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+
+h1 {
+    /* font-family: 'Lavishly Yours', cursive; */
+    font-size: 75px;
+    /* font-weight: bold; */
+    position: absolute;
+    z-index: 1;
+    margin-left: 300px;
+    padding-top: 120px;
+}
+
 .home__heading {
     text-align: center;
     margin-top: 50px;
@@ -34,12 +47,22 @@ img {
     border-radius: 4px;
     background-color: white;
     opacity: 1;
-} */
+}
 
-.flex__books_item:hover{
+.flex__books_item:hover {
     opacity: 0.8;
 }
 
 .flex__books_item>h3+p {
     margin: 0;
+}
+
+#hero {
+    height: 80vh;
+    /* background-image: url("https://image.shutterstock.com/image-photo/open-book-hand-drawn-landscape-600w-152964749.jpg"); */
+    background-image: url("https://res.cloudinary.com/dppsoi8la/image/upload/v1649162767/277593155_1795006597362263_6567163433465254100_n_d7a6xw.jpg");
+    background-repeat: none;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
 }

@@ -7,7 +7,6 @@
         </div>
         <div *ngIf="sessionStorage.length > 0" class="user">
             <li><a class="nav_link dash" href="/create">Add</a></li>
-            <li><a class="nav_link dash" href="/users/:ownerId">My books</a></li>
             <li><a class="nav_link" (click)="logoutHandler()" href="javascript:void(0)">Logout</a></li>
         </div>
         <div *ngIf="sessionStorage.length == 0" class="guest">
