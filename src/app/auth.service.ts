@@ -12,8 +12,10 @@ const url = 'https://parseapi.back4app.com/users'
 export class AuthService {
     private _currentUser = new BehaviorSubject<IUser>(undefined!);
 
-    currentUser$ = this._currentUser.asObservable();
-    isLoggedIn$ = this.currentUser$.pipe(map(user => !!user));
+    sessionStorage = sessionStorage;
+    // currentUser$ = this._currentUser.asObservable();
+    // isLoggedIn$ = this.currentUser$.pipe(map(user => !!user));
+    isLoggedIn$ = (sessionStorage.length > 0) ? true : false
 
     constructor(private httpClient: HttpClient) {
     }
