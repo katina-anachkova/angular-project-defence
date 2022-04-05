@@ -15,6 +15,8 @@ export class DetailsPageComponent implements OnInit {
 
   book!: IBook;
 
+  sessionStorage: any = sessionStorage;
+
   constructor(private activatedRoute: ActivatedRoute, private usersServise: UsersService, private bookService: BooksServiceService, private router: Router) { }
 
   ngOnInit(): void {

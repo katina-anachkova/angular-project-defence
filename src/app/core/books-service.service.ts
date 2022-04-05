@@ -28,10 +28,6 @@ export class BooksServiceService {
     return this.http.get<IBook>(url + `/${id}`, requestOptions);
   }
 
-  // getMyBooks(ownerId: string): Observable<IBook[]> {
-  //   return this.http.get<IBook[]>(`http://localhost:3030/data/books/${ownerId}`);
-  // }
-
   addBook(body: { title: string, author: string, description: string, imageUrl: string }): Observable<IBook> {
     return this.http.post<IBook>(url, body, requestOptions);
   }

@@ -26,9 +26,10 @@ export class AuthService {
             )
     }
 
-    logout$(): Observable<void> {
-        return this.httpClient
-            .post<void>(url + `/logout`, {})
+    logout$():void {
+        // return this.httpClient
+        //     .post<void>(url + `/logout`, {})
+        sessionStorage.clear();
     }
 
     register$(userData: CreateUserDto): Observable<IUser> {

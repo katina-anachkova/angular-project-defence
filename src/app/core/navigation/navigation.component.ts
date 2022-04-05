@@ -25,7 +25,7 @@ export class NavigationComponent {
   }
 
   ngOnDestroy(): void {
-    // this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   logoutHandler(): void {
@@ -36,18 +36,7 @@ export class NavigationComponent {
     this.isLoggingOut = true;
     console.log('logout called');
 
-    this.authService.logout$().subscribe({
-      next: args => {
-        console.log(args);
-      },
-      complete: () => {
-        this.isLoggingOut = false;
-        sessionStorage.clear();
-        this.router.navigate(['/dashboard']);
-      },
-      error: () => {
-        this.isLoggingOut = false;
-      }
-    });
+    this.authService.logout$();
+    this.router.navigate(['/'])
   }
 }
