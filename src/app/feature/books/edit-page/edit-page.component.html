@@ -7,7 +7,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Title<span class="text-danger"> * </span></label>
-                            <input #bookTitle="ngModel" ngModel type="text" id="title" name="title" required
+                            <input #bookTitle="ngModel" [(ngModel)]="book.title" type="text" id="title" name="title" required
                                 minlength="5" placeholder="Book title">
                             <ng-container *ngIf="bookTitle.touched && bookTitle.invalid">
                                 <p *ngIf="bookAuthor.errors!['required']" class="error">Author is required</p>
@@ -19,7 +19,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Author<span class="text-danger"> * </span></label>
-                            <input #bookAuthor="ngModel" ngModel type="text" id="author" name="author" required
+                            <input #bookAuthor="ngModel" [(ngModel)]="book.author" type="text" id="author" name="author" required
                                 minlength="5">
                             <ng-container *ngIf="bookAuthor.touched && bookAuthor.invalid">
                                 <p *ngIf="bookAuthor.errors!['required']" class="error">Author is required</p>
@@ -31,7 +31,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Description<span class="text-danger"> *</span></label>
-                            <input ngModel #bookDescription="ngModel" required minlength="20" type="text"
+                            <input [(ngModel)]="book.description" #bookDescription="ngModel" required minlength="20" type="text"
                                 id="description" name="description">
                             <ng-container *ngIf="bookDescription.touched && bookDescription.invalid">
                                 <p *ngIf="bookDescription.errors!['required']" class="error">Description is required</p>
@@ -44,7 +44,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Image<span class="text-danger"> *</span></label>
-                            <input ngModel #bookImage="ngModel" required type="text" id="imgUrl" name="imgUrl">
+                            <input [(ngModel)]="book.imageUrl" #bookImage="ngModel" required type="text" id="imgUrl" name="imgUrl">
                             <ng-container *ngIf="bookImage.touched && bookImage.invalid">
                                 <p *ngIf="bookImage.errors!['required']" class="error">Image is required</p>
                             </ng-container>
