@@ -31,11 +31,12 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Description<span class="text-danger"> *</span></label>
-                            <input ngModel #bookDescription="ngModel" required minlength="20" type="text" id="description"
-                                name="description" placeholder="Book description">
+                            <input ngModel #bookDescription="ngModel" required minlength="20" type="text"
+                                id="description" name="description" placeholder="Book description">
                             <ng-container *ngIf="bookDescription.touched && bookDescription.invalid">
                                 <p *ngIf="bookDescription.errors!['required']" class="error">Description is required</p>
-                                <p *ngIf="bookDescription.errors!['minlength']" class="error">Description must be at least 20
+                                <p *ngIf="bookDescription.errors!['minlength']" class="error">Description must be at
+                                    least 20
                                     characters long</p>
                             </ng-container>
                         </div>
@@ -50,7 +51,7 @@
                             </ng-container>
                         </div>
                     </div>
-                   
+
                     <div class="row justify-content-end">
                         <div class="form-group col-sm-6"> <button [disabled]="newBookForm.invalid" type="submit"
                                 class=" btn-primary">Create</button>

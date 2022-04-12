@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BooksServiceService } from 'src/app/core/books-service.service';
 import { IBook } from 'src/app/core/interfaces/books';
-import { IUser } from 'src/app/core/interfaces/user';
 
 @Component({
   selector: 'app-create-book',
