@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IBook } from './interfaces/books';
+import { IUser } from './interfaces/user';
 
 
 const url = 'https://parseapi.back4app.com/classes/Books'
@@ -14,6 +15,7 @@ const headers = {
 const requestOptions = {
   headers: new HttpHeaders(headers)
 }
+
 
 @Injectable()
 export class BooksServiceService {
@@ -28,7 +30,7 @@ export class BooksServiceService {
     return this.http.get<IBook>(url + `/${id}`, requestOptions);
   }
 
-  addBook(body: { title: string, author: string, description: string, imageUrl: string }): Observable<IBook> {
+  addBook(body: { title: string, author: string, description: string, imageUrl: string, userEmail: string }): Observable<IBook> {
     return this.http.post<IBook>(url, body, requestOptions);
   }
 

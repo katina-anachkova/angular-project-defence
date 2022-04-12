@@ -6,5 +6,6 @@ export interface IBook {
     description: string,
     imageUrl: string,
     objectId: string,
-    ownerId: IUser
+    ownerId: IUser,
+    userEmail: string
   }

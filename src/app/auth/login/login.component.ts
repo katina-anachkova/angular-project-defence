@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/dashboard']);
       },
       complete: () => {
-        sessionStorage.setItem('user', body['email'].toString())
+        sessionStorage.setItem('user', body['email'].toString());
       },
       error: (err: { error: { message: string; }; }) => {
         this.errorMsg = err.error.message;

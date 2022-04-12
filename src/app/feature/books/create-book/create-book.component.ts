@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BooksServiceService } from 'src/app/core/books-service.service';
 import { IBook } from 'src/app/core/interfaces/books';
+import { IUser } from 'src/app/core/interfaces/user';
 
 @Component({
   selector: 'app-create-book',
@@ -17,16 +18,19 @@ export class CreateBookComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  userEmail: any = sessionStorage['user'];
+
   submitNewBook(newBookForm: NgForm): void {
-    this.bookService.addBook(newBookForm.value).subscribe({
+    let formData = newBookForm.value;
+    formData['userEmail'] = this.userEmail;
+    
+    this.bookService.addBook(formData).subscribe({
       next: () => {
         this.router.navigate(['/dashboard'])
       },
       error: (error) => {
         console.error(error)
       }
-    })
-
+    });
   }
-
 }
