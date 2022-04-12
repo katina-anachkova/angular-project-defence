@@ -23,9 +23,7 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   handleLogin(): void {
     this.errorMsg = '';

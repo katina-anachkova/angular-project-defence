@@ -19,8 +19,7 @@ export class CreateBookComponent implements OnInit {
 
   submitNewBook(newBookForm: NgForm): void {
     this.bookService.addBook(newBookForm.value).subscribe({
-      next: (book) => {
-        console.log(book)
+      next: () => {
         this.router.navigate(['/dashboard'])
       },
       error: (error) => {
@@ -30,6 +29,4 @@ export class CreateBookComponent implements OnInit {
 
   }
 
-  navigateToHome() {
-  }
 }
