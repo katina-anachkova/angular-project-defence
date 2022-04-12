@@ -1,27 +1,19 @@
-# ProjectDefense
+#Book Library app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+This Angular project was created for project defence pusposes. It represents a kids' shared books catalogue (all users can make updates on the book entries). Users can sign up, go through a books catalogue, add and edit books.
 
-## Development server
+##Features accessible to logged users
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Welcome user message
+Create book page
+Catalogue page that renders books and allows access to book details
+Details page that allows editting the books any user added - share catalogue
 
-## Code scaffolding
+##Pages accessible to all users 
+Dynamic Home page that renders a catalogue of all books in the database 
+Log in page
+Register page
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##Database
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+back4app
