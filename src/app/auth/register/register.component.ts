@@ -22,13 +22,18 @@ export class RegisterComponent implements OnInit {
 
   })
 
+  errorMsg = '';
+  
   constructor(private formBuilder: FormBuilder, private service: RegistersService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   handleRegister(): void {
-    const { email, password, username, repass} = this.registerFormGroup.value;
+    this.errorMsg = '';
+
+
+    const { email, password, username, repass } = this.registerFormGroup.value;
 
     const body: any = {
       email: email,
@@ -37,8 +42,16 @@ export class RegisterComponent implements OnInit {
       repass: repass
     }
 
-    this.service.register(body).subscribe(() => {
-      this.router.navigate(['/dashboard']);
-    })
+    this.service.register(body).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard']);
+      },
+      complete: () => {
+        sessionStorage.setItem('user', body['email'].toString())
+      },
+      error: (err: { error: { message: string; }; }) => {
+        this.errorMsg = err.error.message;
+      }
+    });
   }
 }
