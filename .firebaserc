@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bookd-db-angular": {
+      "hosting": {
+        "project-defense": [
+          "bookd-db-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bookd-db-angular"
+  }
+}
