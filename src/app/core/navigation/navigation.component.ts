@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
-import { RegistersService } from 'src/app/auth/register/register.service';
-import { IUser } from '../interfaces/user';
-import { MessageBusService, MessageType } from '../message-bus.service';
 
 @Component({
   selector: 'app-navigation',
@@ -21,7 +18,7 @@ export class NavigationComponent {
 
   private subscription!: Subscription;
 
-  constructor(public authService: AuthService, private router: Router, private messageBus: MessageBusService) {
+  constructor(public authService: AuthService, private router: Router) {
   }
 
   ngOnDestroy(): void {
