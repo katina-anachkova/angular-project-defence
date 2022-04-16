@@ -1,0 +1,21 @@
+p .not__found {
+    font-size: 55px;
+    font-weight: bold;
+
+}
+
+a.nav_link {
+    text-decoration: none;
+    color: white;
+    background-color: #623944;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.not__found__flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 217px 0
+}
