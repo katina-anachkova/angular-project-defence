@@ -7,10 +7,6 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 
 
 const routes: Routes = [
-  // {
-  //     path: 'classes/Books/create',
-  //     component: CreateBookComponent
-  // },
   {
       path: ':id/edit',
       canActivate:[AuthGuard],
